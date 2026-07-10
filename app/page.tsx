@@ -1,65 +1,55 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <main className="min-h-screen bg-[#f7f7f5] px-6 text-[#171715]">
+      <div className="mx-auto flex min-h-screen w-full max-w-5xl flex-col">
+        <header className="flex items-center justify-between py-7">
+          <a href="#" className="text-xl font-semibold tracking-[-0.04em]">
+            lynko
+          </a>
+          <span className="text-sm text-[#74746f]">Simple links, made shorter.</span>
+        </header>
+
+        <section className="flex flex-1 flex-col items-center justify-center pb-24 text-center">
+          <div className="mb-6 rounded-full border border-[#deded8] bg-white px-3 py-1 text-xs font-medium text-[#65655f] shadow-sm">
+            Fast. Clean. Free.
+          </div>
+          <h1 className="max-w-3xl text-balance text-5xl font-semibold leading-[1.02] tracking-[-0.055em] sm:text-7xl">
+            Short links that get to the point.
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="mt-6 max-w-xl text-pretty text-base leading-7 text-[#676762] sm:text-lg">
+            Turn long, messy URLs into short links you can share anywhere.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+
+          <form className="mt-10 flex w-full max-w-2xl flex-col gap-3 rounded-2xl border border-[#deded8] bg-white p-2 shadow-[0_12px_40px_rgba(28,28,24,0.08)] sm:flex-row">
+            <label htmlFor="url" className="sr-only">
+              Paste a long URL
+            </label>
+            <input
+              id="url"
+              name="url"
+              type="url"
+              inputMode="url"
+              placeholder="Paste your long link here"
+              className="min-w-0 flex-1 rounded-xl px-4 py-3.5 text-base outline-none placeholder:text-[#a4a49e] focus:ring-2 focus:ring-[#242420]/10"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+            <button
+              type="submit"
+              className="rounded-xl bg-[#20201d] px-6 py-3.5 text-sm font-medium text-white transition hover:bg-[#383833] focus:outline-none focus:ring-2 focus:ring-[#20201d] focus:ring-offset-2"
+            >
+              Shorten link
+            </button>
+          </form>
+
+          <p className="mt-4 text-xs text-[#8a8a84]">
+            No account needed. Paste, shorten, and share.
+          </p>
+        </section>
+
+        <footer className="flex items-center justify-between border-t border-[#e3e3de] py-6 text-xs text-[#85857f]">
+          <span>© 2026 Lynko</span>
+          <span>Built for simpler sharing.</span>
+        </footer>
+      </div>
+    </main>
   );
 }
